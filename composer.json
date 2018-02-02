@@ -3,12 +3,12 @@
     "type": "library",
     "description": "Symfony development platform",
     "keywords": ["REST", "GRAPHQL"],
-    "homepage": "https://olla.tech/surface",
+    "homepage": "https://olla.tech/flow",
     "license": "MIT",
     "authors": [
         {
             "name": "Olla Tech",
-            "email": "wawan@olla.tech",
+            "email": "contact@olla.tech",
             "homepage": "https://olla.tech"
         }
     ],
