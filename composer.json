@@ -1,7 +1,7 @@
 {
     "name": "olla/flow",
     "type": "library",
-    "description": "Symfony development platform",
+    "description": "Symfony development framework",
     "keywords": ["REST", "GRAPHQL"],
     "homepage": "https://olla.tech/flow",
     "license": "MIT",
