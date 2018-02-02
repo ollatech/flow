@@ -96,6 +96,12 @@
 
    </service>
 
+   <!--Command-->
+   <service id="Olla\Flow\Command\MetadataCommand" class="Olla\Flow\Command\MetadataCommand" >
+     <argument type="service" id="Olla\Flow\Metadata\Metadata" />
+     <tag name="console.command"  />
+   </service>
+
   
  </services>
 </container>

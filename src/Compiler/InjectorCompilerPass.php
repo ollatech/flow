@@ -30,7 +30,7 @@ final class InjectorCompilerPass implements CompilerPassInterface
             $action = $container->findDefinition($id);
             $action->setPublic(true);
             $service->addMethodCall(
-                'addService', [$provider, $alias, $serviceId]
+                'addService', [$provider, $providerId, $serviceId]
             );
         }
     }

@@ -13,17 +13,15 @@ final class PathCompilerPass implements CompilerPassInterface
         $watchPaths = [];
         $watchPaths['resources'] = [];
         $watchPaths['operations'] = [];
-        $watchPaths['types'] = [];
         $watchPaths['admins'] = [];
         $watchPaths['frontends'] = [];
         foreach ($container->getParameter('kernel.bundles_metadata') as $bundle) {
             $dirname = $bundle['path'];
             $paths = [];
-            $paths['resources'] = $dirname.'/Entity';
-            $paths['operations'] = $dirname.'/Operation';
-            $paths['types'] = $dirname.'/Graphql';
-            $paths['admins'] = $dirname.'/Admin';
-            $paths['frontends'] = $dirname.'/Frontend';
+            $paths['resources'] = $dirname.'/Resource';
+            $paths['operations'] = $dirname.'/Presentation/Service';
+            $paths['admins'] = $dirname.'/Presentation/Admin';
+            $paths['frontends'] = $dirname.'/Presentation/Frontend';
             foreach ($paths as $name => $path) {
                 if ($container->fileExists($path, false)) {
                     $watchPaths[$name][] = $path;
@@ -31,6 +29,7 @@ final class PathCompilerPass implements CompilerPassInterface
             }
         }
         $appConfig = $container->findDefinition('Olla\Flow\Config');
+
         $appConfig->addMethodCall(
             'add', ['bundle_resources_path', $watchPaths['resources']]
         );
@@ -42,9 +41,6 @@ final class PathCompilerPass implements CompilerPassInterface
         );
         $appConfig->addMethodCall(
             'add', ['bundle_frontends_path', $watchPaths['frontends']]
-        );
-        $appConfig->addMethodCall(
-            'add', ['bundle_types_path', $watchPaths['types']]
         );
 
         //from configuration
