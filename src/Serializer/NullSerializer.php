@@ -1,12 +1,13 @@
 <?php
 
-namespace Olla\Flow\Security\Guard;
+namespace Olla\Flow\Serializer;
 
 use Olla\Flow\ConfigInterface;
 use Olla\Flow\Service\ServiceInterface;
 
 final class NullSerializer extends AbstractSerializer{
-	public function getRepository(string $resourceClass) {
-		
+	
+	public function normalize($data, string $format, array $context = []) {
+		return $data;
 	}
 }

@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 	<services>
-		<service id="Olla\Flow\Database\NullDB" class="Olla\Flow\Database\NullDB" public="true" >
-			<tag name="olla.provider" provider="storage"  /> 
+		<service id="Olla\Flow\Parser\BaseParser" class="Olla\Flow\Parser\BaseParser" public="true" >
+			<tag name="olla.provider" provider="parser"  /> 
 		</service>
-		<service id="Olla\Flow\Database\DB" class="Olla\Flow\Database\DB" >
+		<service id="Olla\Flow\Parser\Parser" class="Olla\Flow\Parser\Parser" >
 			<argument type="service" id="Olla\Flow\Config" />
 			<argument type="service" id="Olla\Flow\Service\Service" />
 		</service>

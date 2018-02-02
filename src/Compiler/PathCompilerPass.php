@@ -18,7 +18,7 @@ final class PathCompilerPass implements CompilerPassInterface
         foreach ($container->getParameter('kernel.bundles_metadata') as $bundle) {
             $dirname = $bundle['path'];
             $paths = [];
-            $paths['resources'] = $dirname.'/Resource';
+            $paths['resources'] = $dirname.'/Entity';
             $paths['operations'] = $dirname.'/Presentation/Service';
             $paths['admins'] = $dirname.'/Presentation/Admin';
             $paths['frontends'] = $dirname.'/Presentation/Frontend';
@@ -45,7 +45,16 @@ final class PathCompilerPass implements CompilerPassInterface
 
         //from configuration
         $appConfig->addMethodCall(
-            'add', ['app_resources_path', $container->getParameter('app_resources_dirs')]
+            'add', ['flow_resource_paths', $container->getParameter('flow_resource_paths')]
+        );
+        $appConfig->addMethodCall(
+            'add', ['flow_operation_paths', $container->getParameter('flow_operation_paths')]
+        );
+        $appConfig->addMethodCall(
+            'add', ['flow_admin_paths', $container->getParameter('flow_admin_paths')]
+        );
+        $appConfig->addMethodCall(
+            'add', ['flow_frontend_paths', $container->getParameter('flow_frontend_paths')]
         );
     }
 }

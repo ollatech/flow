@@ -33,7 +33,6 @@ final class OllaFlowExtension extends Extension implements PrependExtensionInter
             $container->prependExtensionConfig('framework', ['property_info' => ['enabled' => true]]);
         }
     }
-
     public function load(array $configs, ContainerBuilder $container)
     {
         $this->reconfig($configs, $container);
@@ -43,6 +42,7 @@ final class OllaFlowExtension extends Extension implements PrependExtensionInter
         $loader->load('operation.xml');
         $loader->load('guard.xml');
         $loader->load('gate.xml');
+        $loader->load('parser.xml');
         $loader->load('credential.xml');
         $loader->load('middleware.xml');
         $loader->load('monitor.xml');

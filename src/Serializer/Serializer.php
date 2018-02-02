@@ -8,7 +8,6 @@ class Serializer extends AbstractSerializer
 {
 	const PROVIDER_NAME = 'serializer';
 	const DEFAULTT = 'Olla\Flow\Serializer\NullSerializer';
-
 	protected $config;
 	protected $service;
 	protected $provider;
@@ -28,15 +27,13 @@ class Serializer extends AbstractSerializer
 		}
 		return $this->service->get(self::PROVIDER_NAME, $provider);
 	}
-
 	public function provider(string $provider = null) {
 		if($provider) {
 			$this->provider = $provider;
 		}
 		return $this;
 	}
-
-	public function execute(string $resourceClass, array $dataRequest, array $options = []) {
-		return $this->get()->execute($resourceClass, $dataRequest, $options);
+	public function normalize($data, string $format, array $context = []) {
+		return $this->get()->normalize($data, $format, $context);
 	}
 }

@@ -4,7 +4,6 @@
 	xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 	<services>
 		<service id="Olla\Flow\Service\Service" class="Olla\Flow\Service\Service" >
-			<argument type="service" id="Olla\Flow\Config" />
 			<argument type="service" id="service_container" />
 		</service>
 	</services>

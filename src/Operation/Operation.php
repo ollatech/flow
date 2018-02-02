@@ -29,7 +29,7 @@ class Operation extends AbstractOperation
 		return $this->service->get(self::PROVIDER_NAME, $provider);
 	}
 
-	public function provider(string $provider = null) {
+	public function action(string $provider = null) {
 		if($provider) {
 			$this->provider = $provider;
 		}
