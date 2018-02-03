@@ -9,6 +9,6 @@
 		<service id="Olla\Flow\Security\Middleware\Middleware" class="Olla\Flow\Security\Middleware\Middleware" >
 			<argument type="service" id="Olla\Flow\Config" />
 			<argument type="service" id="Olla\Flow\Service\Service" />
-		</service>
+		</service> 
 	</services>
 </container>
