@@ -7,4 +7,5 @@ demo: http://olla.heroku.com
 ##TODO
 - Create unit test
 - Create Documentation
+- Create Integration Test
 
