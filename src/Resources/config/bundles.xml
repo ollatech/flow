@@ -3,8 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 	<services>
-		<service id="olla.finder" class="Symfony\Component\Finder\Finder" >
-			
+		<service id="Olla\Flow\Bundles\Orm\CommonRepository" class="Olla\Flow\Bundles\Orm\CommonRepository" >
+			<argument type="service" id="doctrine" />
+			<tag name="olla.repository" engine="orm" />
 		</service>
 	</services>
 </container>

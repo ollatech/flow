@@ -3,8 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 	<services>
-		<service id="olla.finder" class="Symfony\Component\Finder\Finder" >
-			
+		<service id="Olla\Flow\Packages\FrontendTheme\Theme" class="Olla\Flow\Packages\FrontendTheme\Theme" >
+			<argument type="service" id="twig" />
+			<tag name="olla.theme" context="frontend" design="default" />
 		</service>
 	</services>
 </container>

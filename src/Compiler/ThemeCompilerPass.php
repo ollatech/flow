@@ -6,27 +6,32 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-final class InjectorCompilerPass implements CompilerPassInterface
+final class ThemeCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        $service = $container->findDefinition('olla.repository_component');
-        $taggesAction = $container->findTaggedServiceIds('olla.repository', true);
+       
+        $service = $container->findDefinition('olla.theme_component');
+        $taggesAction = $container->findTaggedServiceIds('olla.theme', true);
         foreach ($taggesAction as $id => $tags) {
-            $engine = $id;
             $serviceId = $id;
+            $context = null;
+            $design = null;
             foreach ($tags as $tag) {
-                if(isset($tag['engine'])) {
-                    $engine = $tag['engine'];
+                if(isset($tag['design'])) {
+                    $design = $tag['design'];
+                }
+                if(isset($tag['context'])) {
+                    $context = $tag['context'];
                 }
             }
-            if(!$engine) {
+            if(!$context || !$design) {
                 continue;
             }
             $action = $container->findDefinition($id);
             $action->setPublic(true);
             $service->addMethodCall(
-                'addRepository', [$engine, $serviceId]
+                'addTheme', [$context, $design, $serviceId]
             );
         }
     }

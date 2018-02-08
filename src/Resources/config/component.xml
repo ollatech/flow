@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<services>
+		<service id="olla.repository_component" class="Olla\Flow\Components\RepositoryComponent" >
+			<argument type="service" id="service_container" />
+		</service>
+		<service id="olla.theme_component" class="Olla\Flow\Components\ThemeComponent" >
+			<argument type="service" id="service_container" />
+			<argument type="service" id="twig" />
+			<argument type="service" id="olla.finder" />
+		</service>
+		<service id="olla.conneg_component" class="Olla\Flow\Components\ConnegComponent" >
+		</service>
+		<service id="olla.gate_component" class="Olla\Flow\Components\GateComponent" >
+		</service>
+		<service id="olla.guard_component" class="Olla\Flow\Components\GuardComponent" >
+		</service>
+		<service id="olla.validator_component" class="Olla\Flow\Components\ValidatorComponent" >
+		</service>
+	</services>
+</container>
