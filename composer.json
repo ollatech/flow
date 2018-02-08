@@ -26,7 +26,7 @@
         "doctrine/orm": "^2.5.2",
         "doctrine/annotations": "^1.2",
         "symfony/routing": "^3.3 || ^4.0",
-        "olla/prisma": "*"
+        "olla/prisma": "*" 
     },
     "require-dev": {
         "behat/behat": "^3.1",
