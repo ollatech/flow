@@ -39,7 +39,6 @@ class CommonRepository  {
 	}
 
 	public function get(array $args) {
-	
 		$queryBuilder = $this->repository()->createQueryBuilder('o');
 		$rootAlias = $queryBuilder->getRootAliases()[0];
 		$this->joinRelations($queryBuilder, $this->class, $rootAlias, 1);
