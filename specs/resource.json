@@ -1,0 +1,108 @@
+[
+	{
+		"id": "App\/Entity\/User",
+		"class": "App\/Entity\/User",
+		"alias": "User",
+		"group": "data",
+		"access": ["standard"],
+		"context": ["standard"],
+		"properties" : [
+			{
+				"name": "id",
+				"type" : "string",
+				"class": null,
+				"collection": false,
+				"readable" : true,
+				"writeable" : true,
+				"searchable" : true,
+				"filterable" : false,
+				"nullable" : false,
+				"identifier" : true,
+				"context" : ["read_write"]
+			},
+			{
+				"name": "name",
+				"type" : "string",
+				"class": null,
+				"collection": false,
+				"readable" : true,
+				"writeable" : true,
+				"searchable" : true,
+				"filterable" : false,
+				"nullable" : false,
+				"identifier" : true,
+				"context" : ["read_write"]
+			}
+		],
+		"operations": [
+			{
+				"id": "user_collection_operation",
+				"class" : "App\/Operation\/Collection",
+				"alias" : "users",
+				"type" : "query",
+				"action" : "collection",
+				"args": [
+					{
+						"name": "keyword",
+						"type": "string"
+					},
+					{
+						"name": "page",
+						"type": "int"
+					},
+					{
+						"name": "order",
+						"type": "string"
+					},
+					{
+						"name": "sort",
+						"type": "string"
+					}
+				],
+				"access" : ["standard"],
+				"route" : {
+					"path" : "",
+					"method" : ""
+				}
+			},
+			{
+				"id": "user_update_operation",
+				"class" : "App\/Operation\/Collection",
+				"alias" : "users",
+				"type" : "mutation",
+				"action" : "update",
+				"args": [
+					{
+						"name": "id",
+						"type": "string"
+					},
+					{
+						"name": "input",
+						"type": "object",
+						"fields": [
+							{
+								"name": "id",
+								"type": "string"
+							},
+							{
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"name": "username",
+								"type": "string"
+							}
+						]
+					}
+				],
+				"access" : ["standard"],
+				"route" : {
+					"path" : "",
+					"method" : ""
+				}
+			}
+		],
+		"admins": [
+		]
+	}
+]
