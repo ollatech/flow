@@ -10,5 +10,4 @@ abstract class Operation {
 	public function json() {
 
 	}
-
 }
